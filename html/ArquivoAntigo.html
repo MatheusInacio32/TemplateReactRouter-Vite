@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- ESTUDE POR ESSE ARQUIVO HTML QUE FUNCIONA IGUAL AO PROJETO -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Original Produtos - Palitos de Churrasco</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #21622e;
+            --light-green: #dfe280;
+            --highlight-yellow: #ffb600;
+            --white: #ffffff;
+            --dark-green: #184c1e;
+        }
+
+        /* Espaçamentos */
+        section, .carousel-inner {
+            margin-bottom: 20px;
+        }
+
+        .menu-background {
+            background-color: #12391c;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 1px;
+            width: 360px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Navbar personalizada */
+        .navbar-custom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar-custom .navbar-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: var(--white);
+            font-size: 1.25rem;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Efeito hover e animação de pulsação no clique */
+        .navbar-custom .navbar-nav .nav-link:hover {
+            background-color: var(--highlight-yellow);
+            color: var(--primary-green);
+        }
+
+        .navbar-custom .navbar-nav .nav-link.active {
+            background-color: var(--dark-green);
+            color: var(--white);
+            animation: pulse 1s infinite; /* Animação de pulsação ao clique */
+        }
+
+        /* Animação de pulsação */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Botão de WhatsApp fixo */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            z-index: 100;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar-custom .navbar-nav {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                width: 100%;
+                padding: 10px;
+            }
+            .navbar-custom .navbar-nav .nav-link {
+                font-size: 1.15rem;
+                text-align: center;
+            }
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+         /* Estilo para o texto do carrossel */
+         .carousel-caption-custom {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-family: 'Minion Variable Concept', serif;
+        }
+
+        .carousel-caption-custom h1 {
+            font-size: 2.5rem;
+            color: black;
+        }
+
+        .carousel-caption-custom p {
+            font-size: 1.3rem;
+            color: black;
+        }
+
+        /* Estilização para os botões do carrossel */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5); /* Círculo transparente preto */
+            border-radius: 50%; /* Para fazer o botão ser circular */
+            padding: 25px; /* Aumenta a área do botão */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: auto; /* Ajusta o tamanho para acomodar o círculo */
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Torna o fundo mais escuro ao passar o mouse */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            
+            border-radius: 50%; /* Mantém o formato circular */
+        }
+
+
+        /* Destaque em verde escuro */
+        .highlight {
+            color: #006400; /* Verde escuro */
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.521); /* Sombra branca média */
+        }
+        .highlightbranco {
+            color: #1eb53a; /* Verde escuro */
+            font-weight: bold;
+        }
+        .white{
+            color: rgba(255, 255, 255, 0.795) !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.89); /* Sombra branca média */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Banner com logo e menu -->
+<div class="menu-background">
+    <img src="logo.png" alt="Logo do site" class="logo" id="logoHome">
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#catalogo">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faleConosco">Fale Conosco</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobreNos">Sobre Nós</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Carrossel -->
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Slides do carrossel -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="./img/Carrosel1.png" class="d-block w-100" alt="Imagem 2">
+            <div class="carousel-caption-custom">
+                <h1>Desde <span class="highlight">1985</span>, trazendo <span class="highlight">tradição</span> e <span class="highlight">qualidade</span> em cada palito.</h1>
+                <p>Na Original Produtos, nossa missão é oferecer soluções simples e eficientes para o seu churrasco.</p>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="./img/Carrosel2.png" class="d-block w-100" alt="Imagem 3">
+            <div class="carousel-caption-custom">
+                <h1 class="white">Compromisso com a <span class="highlightbranco">excelência</span>: do campo à sua mesa.</h1>
+                <p class="white">Cada palito de churrasco passa por um rigoroso processo de <span class="highlightbranco">seleção</span> e <span class="highlightbranco">qualidade</span>.</p>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="./img/Carrosel3.png" class="d-block w-100" alt="Imagem 1">
+            <div class="carousel-caption-custom">
+                <h1><span class="highlight">Sustentabilidade</span> e <span class="highlight">inovação</span> para o seu churrasco perfeito.</h1>
+                <p>Oferecemos produtos que transformam seu churrasco em uma <span class="highlight">experiência única</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botões de controle -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Botão de WhatsApp fixo -->
+<a href="https://wa.me/SEU_NUMERO" target="_blank" class="whatsapp-button">
+    <img src="./zap.png" alt="Botão WhatsApp">
+</a>
+
+<!-- Grid de Produtos -->
+<section id="produtos" class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img src="hashi.jpg" class="img-fluid" alt="Hashi">
+            <h3>Hashi</h3>
+            <p>Para experiências gastronômicas autênticas.</p>
+        </div>
+        <div class="col-md-6 mb-4">
+            <img src="palito-dental.jpg" class="img-fluid" alt="Palito Dental">
+            <h3>Palito Dental com Menta</h3>
+            <p>Refrescância a cada uso.</p>
+        </div>
+        <div class="col-md-6 mb-4">
+            <img src="espeto.jpg" class="img-fluid" alt="Espeto">
+            <h3>Espetos</h3>
+            <p>Perfeito para o seu churrasco.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Convite para Revendedores -->
+<section class="container mt-5">
+    <div class="text-center">
+        <h2>Seja um Revendedor</h2>
+        <p>Entre em contato para saber mais.</p>
+        <a href="https://wa.me/SEU_NUMERO" class="btn btn-success whatsapp-btn">WhatsApp</a>
+    </div>
+</section>
+
+<!-- Formulário de Contato -->
+<section id="contato" class="container mt-5 mb-5">
+    <h2>Fale Conosco</h2>
+    <form id="contact-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <p>© <span id="currentYear"></span> Web Racing. Todos os direitos reservados. Desenvolvido por Agência Astro</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Atualiza o ano automaticamente no rodapé
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Adiciona a classe 'active' ao clicar nos links da navbar
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Redireciona para a página inicial ao clicar na logo
+    document.getElementById('logoHome').addEventListener('click', function() {
+        window.location.href = '/';
+    });
+</script>
+</body>
+</html>
