@@ -1,50 +1,87 @@
+# Welcome to React Router!
 
-<div style="display: flex; gap: 10px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js" width="50"/>
-  
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap" width="50"/>
-  
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="50"/>
-</div>
+A modern, production-ready template for building full-stack React applications using React Router.
 
-# Palitos - Projeto Next.js
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
-Este projeto é uma aplicação Next.js para o site "Original Produtos - Palitos de Churrasco".
+## Features
 
-## Estrutura do Projeto
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-### Diretórios e Componentes
+## Getting Started
 
-- **/public**: Contém as imagens estáticas usadas no projeto.
-- **/pages**: Contém as páginas da aplicação Next.js. O arquivo `index.js` é a página inicial.
-- **/components**: Contém os componentes reutilizáveis do projeto, organizados em diretórios próprios com seus arquivos CSS modules.
+### Installation
 
-### Por que usar CSS Modules?(Nao adicionado ainda)
+Install the dependencies:
 
-Usar CSS modules para cada componente oferece várias vantagens:
-- **Escopo Local**: O CSS é aplicado apenas ao componente correspondente, evitando conflitos de estilo.
-- **Manutenção**: Facilita a manutenção do código, pois o CSS está diretamente relacionado ao componente.
-- **Reutilização**: Componentes com estilos encapsulados podem ser facilmente reutilizados em outros projetos ou partes do aplicativo sem medo de colidir com outros estilos.
+```bash
+npm install
+```
 
-Por enquanto todos estilos estão no styles/globals.css
+### Development
 
-### Comparação com o HTML Antigo
+Start the development server with HMR:
 
-No repositório, você encontrará um arquivo HTML antigo. É interessante compará-lo com o novo código, pois ajuda a entender como os componentes foram modularizados e otimizados no projeto Next.js.
-
-## Subindo o Projeto Localmente
-
-### Passo a Passo:
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-2. **Instale as dependências:**
-    ```bash
-    npm install
-    ```
-3. **Inicie o Local Host**
 ```bash
 npm run dev
 ```
+
+Your application will be available at `http://localhost:5173`.
+
+## Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Docker Deployment
+
+To build and run using Docker:
+
+```bash
+docker build -t my-app .
+
+# Run the container
+docker run -p 3000:3000 my-app
+```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+```
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.
