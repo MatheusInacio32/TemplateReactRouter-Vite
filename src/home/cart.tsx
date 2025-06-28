@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
 
-export function Page2Content() {
+export function Cart() {
   return (
     <main className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="mb-6 px-4 pt-4">

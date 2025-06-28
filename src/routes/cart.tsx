@@ -1,5 +1,5 @@
 import type { Route } from "../app/+types/root";
-import { Page2Content } from "../home/page2";
+import { Cart } from "../home/cart";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Page2() {
-  return <Page2Content />;
+  return <Cart />;
 }

@@ -9,5 +9,5 @@ export default [
   index("../routes/home.tsx"),
   
   // Rota para a página 2
-  route("page2", "../routes/page2.tsx"),
+  route("cart", "../routes/cart.tsx"),
 ] satisfies RouteConfig;
